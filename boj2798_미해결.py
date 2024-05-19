@@ -1,22 +1,24 @@
+from itertools import combinations
+
 N, M = map(int, input().split())
-card = list(map(int, input().split()))
-orig_card = card
 
-result = []
+num_list = []
+sum_list = []
 
-for i in range(N) :
-    card.pop(i)
-    print(card, 'i')
-    for a in range(len(card)) :
-        card.pop(a)
-        print(card, 'a')
-        for h in range(len(card)) :
-            result.append(orig_card[i] + orig_card[a] + orig_card[h])
-            print(result, "r")
-            
-for j in result :
-    if j > M :
-        result.remove(j)
+num_list = list(map(int, input().split()))
+
+for i in list(combinations(num_list, 3)) :
+    sum_list.append(sum(i))
+
+sum_list = list(set(sum_list))
+
+print(sum_list)
+
+sum_list.sort()
+
+for a in sum_list :
+    if a > M :
+        sum_list.remove(a)
         
-result.sort()
-print(int(result[-1]))
+print(sum_list)
+
