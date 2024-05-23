@@ -8,3 +8,8 @@ N, K = tuple(map(int, sys.stdin.readline().rstrip().split()))
 N_list = [p_num + 1 for p_num in range(N)]
 
 
+
+while N_list :
+    third_n = N_list[next_addr + 2]
+    
+
