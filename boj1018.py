@@ -1,36 +1,29 @@
-import sys
-
-WB_lambda = lambda x : 'B' if x == 'W' else 'W'
-
-H, W = map(int, sys.stdin.readline().rstrip().split())
-
-chess_board = []
-
-cnt = 0
-pre_t_f = ''
-pre_t = ''
-
-for i in range(H) :
-    temp_t = list(sys.stdin.readline().rstrip())
-    for n in range(W) :
-        #맨 앞
-        if i == 0 and n == 0 :
-            pre_t_f = temp_t[n]
-        
-        elif n == 0 and temp_t[n] == pre_t_f:
-            temp_t[n] = WB_lambda(temp_t[n])
-            pre_t_f = temp_t[n]
-            pre_t = temp_t[n]
-            cnt += 1
-
-        elif n == 0 :
-            pre_t_f = temp_t[n]
-            pre_t = temp_t[n]
-        
-        elif temp_t[n] == pre_t :
-            temp_t[n] = WB_lambda(temp_t[n])
-            pre_t = temp_t[n]
-            cnt += 1
-
-            
-print(cnt)
+n, m = map(int, input().split())
+board = []
+result = []
+ 
+for _ in range(n):
+    board.append(input())
+ 
+for i in range(n-7):
+    for j in range(m-7):
+        draw1 = 0
+        draw2 = 0
+ 
+        for a in range(i, i+8):
+            for b in range(j, j+8):
+                if (a + b) % 2 == 0:
+                    if board[a][b] != 'B':
+                        draw1 += 1
+                    if board[a][b] != 'W':
+                        draw2 += 1
+                else:
+                    if board[a][b] != 'W':
+                        draw1 += 1
+                    if board[a][b] != 'B':
+                        draw2 += 1
+ 
+        result.append(draw1)
+        result.append(draw2)
+ 
+print(min(result))
