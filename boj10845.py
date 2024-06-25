@@ -1,30 +1,32 @@
-N = int(input())
+import sys
+
+N = int(sys.stdin.readline())
 
 queue = []
 
 for i in range(N) :
-    cmd = input()
+    cmd = sys.stdin.readline().split()
 
     if 'push' in cmd :
         queue.append(int(cmd[-1]))
-    elif cmd == 'pop' :
+    elif cmd == ['pop'] :
         try :
             print(queue.pop(0))
         except :
             print(-1)
-    elif cmd == 'size' :
+    elif cmd == ['size'] :
         print(len(queue))
-    elif cmd == 'empty' :
+    elif cmd == ['empty'] :
         if len(queue) == 0 :
             print(1)
         else :
             print(0)
-    elif cmd == 'front' :
+    elif cmd == ['front'] :
         try :
             print(queue[0])
         except :
             print(-1)
-    elif cmd == 'back' :
+    elif cmd == ['back'] :
         try :
             print(queue[-1])
         except :
