@@ -1,12 +1,11 @@
-import collections
 import sys
 
-N = int(sys.stdin.readline().rstrip())
+M = int(sys.stdin.readline())
+M_l = []
 
-card = collections.deque(i for i in range(1, N + 1))
+for i in range(M) :
+    M_l.append(int(sys.stdin.readline()))
 
-while len(card) > 1 :
-    card.popleft()
-    card.append(card.popleft())
-
-print(card[0])
+M_l.sort()
+for t in M_l :
+    print(t)
