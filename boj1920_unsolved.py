@@ -1,15 +1,13 @@
-from bisect import bisect_left
 from sys import stdin
 
 N = int(input())
-N_list = list((map(int, stdin.readline().split())))
-N_list.sort()
+N_list = set((map(int, stdin.readline().split())))
 
 M = int(input())
 M_list = list(map(int, stdin.readline().split()))
 
 for i in M_list :
-    if bisect_left(N_list, i) == N:
-        print(0)
-    else :
+    if i in N_list :
         print(1)
+    else :
+        print(0)
