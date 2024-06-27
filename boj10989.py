@@ -1,12 +1,16 @@
-import sys
+N = int(input())
 
-N = int(sys.stdin.readline().rstrip())
-nums = []
+N_d = dict()
 
-for i in range(N) : 
-    a = int(sys.stdin.readline().rstrip())
-    nums.append(a)
-    
-nums.sort()
-for a in nums :
-    print(a)
+for i in range(N) :
+    temp = int(input())
+    if temp not in N_d.keys() :
+        N_d[temp] = 1
+    else :
+        N_d[temp] += 1
+
+d1 = sorted(N_d.items())
+
+for t in d1 :
+    for _ in range(N_d[t]) :
+        print(t)

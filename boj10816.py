@@ -1,24 +1,15 @@
+from collections import Counter
 from sys import stdin
 
-N = int(stdin.readline())
-My_card = list(map(int, stdin.readline().split()))
+n = stdin.readline().rstrip()
+card = list(map(int,stdin.readline().split()))
+m = stdin.readline().rstrip()
+test = list(map(int,stdin.readline().split()))
 
-M = int(input())
-oppos_card = list(map(int, stdin.readline().split()))
+count = Counter(card)
 
-re_dict = dict()
-
-for i in oppos_card :
-    if i in re_dict :
-        re_dict += 1
-    else :
-        re_dict[i] = 0
-
-for t in My_card :
-    try :
-        re_dict[i] += 1
-    except :
-        continue
-
-for s in re_dict.values() :
-    print(s, end=' ')
+for i in range(len(test)):
+    if test[i] in count:
+        print(count[test[i]], end=' ')
+    else:
+        print(0, end=' ')
