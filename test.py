@@ -1,7 +1,4 @@
-import collections
-import sys
+s = [1,2,3,4]
+s.append(s.pop(0))
 
-A = collections.deque([1,2,3,4,5])
-A.rotate(len(A)//2)
-
-print(A)
+print(s)
