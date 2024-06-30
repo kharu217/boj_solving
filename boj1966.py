@@ -4,18 +4,23 @@ for i in range(X) :
     cnt = 1
     N, M = map(int, input().split())
     l = list(map(int, input().split()))
-    for t in range(len(l)) :
+    while True :
+        target_l = l[M]
+        
+        if len(l) == 0 :
+            break
+        
         if l[0] == max(l) :
-            if t == M :
+            if M == 0 :
                 print(cnt)
                 break
             else :
-                cnt += 1
                 l.pop(0)
                 M -= 1
+                cnt += 1
         else :
-            if t == M :
-                l.append(l.pop(0))
-                M = len(l)
-            else :
-                l.append(l.pop(0))
+            l.append(l.pop(0))
+            M -= 1
+        if M < 0 :
+            M += len(l)
+                
