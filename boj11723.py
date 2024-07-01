@@ -5,26 +5,30 @@ N = int(sys.stdin.readline().rstrip())
 
 for i in range(N) :
     cmd = sys.stdin.readline().rstrip()
+    try :
+        argu = int(cmd[-2:].rstrip(' '))
+    except :
+        pass
     if 'add' in cmd :
-        if cmd[-1] not in S :
-            S.add(cmd[-1])
+        if argu not in S :
+            S.add(argu)
         else :
             continue
 
     elif 'remove' in cmd :
         try :
-            S.remove(cmd[-1])
+            S.remove(argu)
         except :
             continue
 
     elif 'check' in cmd :
-        print(int(cmd[-1] in S))
+        print(int(argu in S))
 
     elif 'toggle' in cmd :
-        if cmd[-1] in S :
-            S.remove(cmd[-1])
+        if argu in S :
+            S.remove(argu)
         else :
-            S.add(cmd[-1])
+            S.add(argu)
 
     elif cmd == 'all' :
         S = set(range(1, 21))

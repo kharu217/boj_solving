@@ -1,4 +1,3 @@
-l = set()
+s = ' 1'
 
-l.add('1')
-print(int('1' in l))
+print(int(s[-2:-1]))
