@@ -1,4 +1,4 @@
-s = [1,2,3,4]
-s.append(s.pop(0))
+l = set()
 
-print(s)
+l.add('1')
+print(int('1' in l))
