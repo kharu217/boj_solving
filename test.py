@@ -1,1 +1,3 @@
-print(ord('A'))
+import math
+
+print(math.sqrt(1) == 1)
