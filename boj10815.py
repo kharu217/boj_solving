@@ -1,11 +1,14 @@
-import sys
+N = int(input())
+N_l = list(map(int, input().split()))
+M = int(input())
+M_l = list(map(int, input().split()))
+M_d = {}
+N_d = {}
 
-N = int(sys.stdin.readline())
-N_l = sorted(list(map(int, sys.stdin.readline().split())))
-M = list(map(int, sys.stdin.readline().split()))
-M_l = sorted(list(map(int, sys.stdin.readline().split())))
-
-s = dict()
+for d in N_l :
+    N_d[d] = 0
 
 for i in M_l :
-    
+    M_d[i] = int(i in N_d.keys())
+
+print(*M_d.values())
