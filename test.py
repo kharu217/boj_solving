@@ -1,2 +1,1 @@
-l = '------'.split(' ')
-print('-' in l)
+S = 'test'
