@@ -1,2 +1,2 @@
-s = list()'hellowolrdhello'
-print(s[-2:])
+s = "1Z3828ACBDJUSUW326"
+print(int(s, 36))
