@@ -1,14 +1,12 @@
-S = list(input())[::-1]
-S_target = list(input())[::-1]
+s = input()
+target = input()
 
-cnt = 0
-if sorted(S) != sorted(S_target) :
+if (len(s) == 1 and len(target) == 1) and s != target :
     print(-1)
     exit()
-for i in range(0, len(S)) :
-    if S[i] != S_target[i] :
-        S.pop(0)
+
+cnt = 0
+for i in range(0, len(s)) :
+    if s[i] != target[i] :
         cnt += 1
-    else :
-        continue
-print(cnt) 
+print(cnt)

@@ -1,2 +1,3 @@
-s = "1Z3828ACBDJUSUW326"
-print(int(s, 36))
+s = list("sls")
+re_s = list(reversed(s))
+print(s == re_s)

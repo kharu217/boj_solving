@@ -1,35 +1,25 @@
-N = int(input())
+n = int(input())
+l = list(map(int, input().split()))
+l_2 = l.copy()
 
-right_N = [i for i in range(1, N + 1)]
+stack = []
+result = []
 
-N_l = list(map(int, input().split()))
-area = []
-
-cur_i = 1
-
-while area or N_l :
-    if N_l :
-        if N_l[0] == cur_i :
-            N_l.pop(0)
-            cur_i += 1
-        elif N_l[0] > cur_i :
-            try :
-                if area[0] == cur_i :
-                    area.pop(0)
-                    cur_i += 1
-                    continue
-                else :
-                    area.insert(0, N_l.pop(0))
-            except :
-                area.insert(0, N_l.pop(0))
-    else :
-        if area[0] == cur_i :
-            area.pop(0)
-            cur_i += 1
-        elif area[0] > cur_i :
+f = 1
+try :
+    while True :
+        if result == sorted :
             break
-
-if area or N_l :
-    print('Sad')
+        if not l or l[0] != f :
+            if stack and stack[-1] == f:
+                result.append(stack.pop())
+                f += 1
+            elif not l :
+                stack.append(l.pop(0))
+        else :
+            result.append(l.pop(0))
+            f += 1
+except EOFError :
+    print("Sad")
 else :
-    print('Nice')
+    print("Nice")
