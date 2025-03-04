@@ -12,6 +12,12 @@ for i in range(2, int(math.sqrt(MAX))+1):
             prime[i*j] = False
             j += 1
 
-number = int(input())
-for i in range(2, number):
-    if(prime[i]): print(i)	
+n = int(input())
+while n != 0 :
+    for i in range(2, n - 1) :
+        if prime[i] and prime[n - i] :
+            print(f"{n} = {i} + {n - i}")
+            break
+    else :
+        print("Goldbach's conjecture is wrong.")
+    n = int(input())
